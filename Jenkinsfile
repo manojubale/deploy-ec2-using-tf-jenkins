@@ -1,13 +1,13 @@
 pipeline {
    agent any
    environment {
-       TF_DIR = "test"
+       TF_DIR = "prod"
        TF_CLI_ARGS = "-no-color"   // Ensures clean, aligned output
    }
    stages {
        stage('Checkout Code') {
            steps {
-               git branch: 'develop', url: 'https://github.com/manojubale/deploy-ec2-using-tf-jenkins.git'
+               git branch: 'main', url: 'https://github.com/manojubale/deploy-ec2-using-tf-jenkins.git'
            }
        }
        stage('Terraform Init') {
